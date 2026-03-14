@@ -1,6 +1,6 @@
 import React from 'react';
 import { Globe, Bot, Brain, Landmark, ArrowRight } from 'lucide-react';
-import { QinHanLogo } from './QinHanLogo';
+import { QinHanLogo } from '../components/QinHanLogo';
 
 interface LoginProps {
   onLogin: () => void;

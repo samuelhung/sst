@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Sidebar } from './components/Sidebar';
-import { Dashboard } from './components/Dashboard';
-import { AgentProfile } from './components/AgentProfile';
-import { AgentPlaza } from './components/AgentPlaza';
-import { CreateAgent } from './components/CreateAgent';
-import { Login } from './components/Login';
+import { Dashboard } from './pages/Dashboard';
+import { AgentProfile } from './pages/AgentProfile';
+import { AgentPlaza } from './pages/AgentPlaza';
+import { CreateAgent } from './pages/CreateAgent';
+import { Login } from './pages/Login';
 import { Menu, X } from 'lucide-react';
 
 export default function App() {
