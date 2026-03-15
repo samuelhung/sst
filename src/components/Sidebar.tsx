@@ -1,6 +1,5 @@
 import React from 'react';
 import { LayoutGrid, Home, Plus, ChevronLeft, Sun, Globe, LogOut, User } from 'lucide-react';
-import { QinHanLogo } from './QinHanLogo';
 
 interface SidebarProps {
   currentView: string;
@@ -22,8 +21,7 @@ export function Sidebar({ currentView, setCurrentView, onLogout }: SidebarProps)
     <div className="w-64 bg-[#141518] border-r border-[#2A2B30] flex flex-col h-full text-gray-300">
       {/* Header */}
       <div className="p-4 flex items-center gap-2 border-b border-[#2A2B30]">
-        <QinHanLogo className="w-6 h-6 text-xs" />
-        <span className="font-semibold text-white">尚书台</span>
+        <span className="font-semibold text-white text-lg">尚书台</span>
       </div>
 
       <div className="p-4 text-xs text-gray-500 font-medium">

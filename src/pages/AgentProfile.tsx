@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Settings, User, MessageSquare, Activity, Globe, Clock, Zap } from 'lucide-react';
+import { Settings, User, MessageSquare, Activity, Globe, Clock, Zap, CheckCircle } from 'lucide-react';
 
 interface AgentProfileProps {
   agentName: string;
@@ -87,56 +87,66 @@ export function AgentProfile({ agentName }: AgentProfileProps) {
 function StatusTab() {
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
-          <div className="text-sm text-gray-500 mb-2">状态</div>
-          <div className="flex items-center gap-2 text-lg font-medium">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6 transition-all hover:border-[#3A3B40] hover:bg-[#1A1B20]">
+          <div className="mb-4">
+            <span className="font-medium text-sm text-emerald-400">状态</span>
+          </div>
+          <div className="flex items-center gap-2 text-lg font-medium text-white">
             <div className="w-2 h-2 rounded-full bg-gray-500"></div>
             待命中
           </div>
         </div>
-        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
-          <div className="text-sm text-gray-500 mb-2">今日 Token</div>
-          <div className="text-2xl font-bold">12.4K</div>
-        </div>
-        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
-          <div className="text-sm text-gray-500 mb-2">本月 Token</div>
-          <div className="text-2xl font-bold">12.4K</div>
-        </div>
-        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
-          <div className="text-sm text-gray-500 mb-2 flex flex-wrap justify-between gap-x-2 gap-y-1">
-            <span>LLM Calls Today</span>
-            <span>Max: 100</span>
+        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6 transition-all hover:border-[#3A3B40] hover:bg-[#1A1B20]">
+          <div className="mb-4">
+            <span className="font-medium text-sm text-purple-400">今日 Token</span>
           </div>
-          <div className="text-2xl font-bold">2</div>
+          <div className="text-2xl font-bold text-white">12.4K</div>
         </div>
-        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
-          <div className="text-sm text-gray-500 mb-2">Total Token</div>
-          <div className="text-2xl font-bold">12.4K</div>
-        </div>
-        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
-          <div className="text-sm text-gray-500 mb-2 flex flex-wrap justify-between gap-x-2 gap-y-1">
-            <span>完成</span>
-            <span>0%</span>
+        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6 transition-all hover:border-[#3A3B40] hover:bg-[#1A1B20]">
+          <div className="mb-4">
+            <span className="font-medium text-sm text-cyan-400">本月 Token</span>
           </div>
-          <div className="text-2xl font-bold">0/0</div>
+          <div className="text-2xl font-bold text-white">12.4K</div>
         </div>
-        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
-          <div className="text-sm text-gray-500 mb-2">Pending</div>
-          <div className="text-2xl font-bold">0</div>
-        </div>
-        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
-          <div className="text-sm text-gray-500 mb-2 flex items-center gap-1">
-            24h 活动 <Activity size={14} />
+        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6 transition-all hover:border-[#3A3B40] hover:bg-[#1A1B20]">
+          <div className="flex justify-between items-center mb-4">
+            <span className="font-medium text-sm text-blue-400">LLM Calls Today</span>
+            <span className="text-xs text-gray-500">Max: 100</span>
           </div>
-          <div className="text-2xl font-bold">14</div>
+          <div className="text-2xl font-bold text-white">2</div>
+        </div>
+        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6 transition-all hover:border-[#3A3B40] hover:bg-[#1A1B20]">
+          <div className="mb-4">
+            <span className="font-medium text-sm text-pink-400">Total Token</span>
+          </div>
+          <div className="text-2xl font-bold text-white">12.4K</div>
+        </div>
+        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6 transition-all hover:border-[#3A3B40] hover:bg-[#1A1B20]">
+          <div className="flex justify-between items-center mb-4">
+            <span className="font-medium text-sm text-lime-400">完成</span>
+            <span className="text-xs text-gray-500">0%</span>
+          </div>
+          <div className="text-2xl font-bold text-white">0/0</div>
+        </div>
+        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6 transition-all hover:border-[#3A3B40] hover:bg-[#1A1B20]">
+          <div className="mb-4">
+            <span className="font-medium text-sm text-amber-400">Pending</span>
+          </div>
+          <div className="text-2xl font-bold text-white">0</div>
+        </div>
+        <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6 transition-all hover:border-[#3A3B40] hover:bg-[#1A1B20]">
+          <div className="mb-4">
+            <span className="font-medium text-sm text-orange-400">24h 活动</span>
+          </div>
+          <div className="text-2xl font-bold text-white">14</div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
           <div className="flex items-center gap-2 text-sm font-medium mb-6">
-            <User size={16} className="text-yellow-500" /> Agent Profile
+            <User size={16} className="text-yellow-500" /> 员工档案
           </div>
           <div className="space-y-4 text-sm">
             <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
@@ -144,19 +154,19 @@ function StatusTab() {
               <span>技能开发师</span>
             </div>
             <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
-              <span className="text-gray-500">Created</span>
+              <span className="text-gray-500">创建时间</span>
               <span>2026年3月12日</span>
             </div>
             <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
-              <span className="text-gray-500">Created by</span>
+              <span className="text-gray-500">创建者</span>
               <span>@maren</span>
             </div>
             <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
-              <span className="text-gray-500">Last Active</span>
+              <span className="text-gray-500">最近活跃</span>
               <span>2026年3月13日</span>
             </div>
             <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
-              <span className="text-gray-500 flex items-center gap-1"><Globe size={14} className="text-blue-400" /> Timezone</span>
+              <span className="text-gray-500">时区</span>
               <span>Asia/Shanghai</span>
             </div>
           </div>
@@ -164,19 +174,19 @@ function StatusTab() {
 
         <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
           <div className="flex items-center gap-2 text-sm font-medium mb-6">
-            <Settings size={16} className="text-blue-400" /> Model Config
+            <Settings size={16} className="text-blue-400" /> 模型配置
           </div>
           <div className="space-y-4 text-sm">
             <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
-              <span className="text-gray-500">Model</span>
+              <span className="text-gray-500">模型</span>
               <span>qwen-plus</span>
             </div>
             <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
-              <span className="text-gray-500">Provider</span>
+              <span className="text-gray-500">服务商</span>
               <span>Qwen</span>
             </div>
             <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
-              <span className="text-gray-500">Context Rounds</span>
+              <span className="text-gray-500">上下文轮数</span>
               <span>100</span>
             </div>
           </div>

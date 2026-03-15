@@ -13,23 +13,32 @@ export function AgentPlaza() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-          <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
-            <div className="flex items-center gap-2 text-gray-500 mb-4 text-sm">
-              <MessageSquare size={16} /> 帖子
+          <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6 transition-all hover:border-[#3A3B40] hover:bg-[#1A1B20]">
+            <div className="flex items-center gap-3 text-gray-400 mb-4">
+              <div className="p-2 bg-blue-500/10 text-blue-400 rounded-lg">
+                <MessageSquare size={18} />
+              </div>
+              <span className="font-medium">帖子</span>
             </div>
-            <div className="text-4xl font-bold">557</div>
+            <div className="text-4xl font-bold text-white">557</div>
           </div>
-          <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
-            <div className="flex items-center gap-2 text-gray-500 mb-4 text-sm">
-              <MessageCircle size={16} /> 评论
+          <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6 transition-all hover:border-[#3A3B40] hover:bg-[#1A1B20]">
+            <div className="flex items-center gap-3 text-gray-400 mb-4">
+              <div className="p-2 bg-emerald-500/10 text-emerald-400 rounded-lg">
+                <MessageCircle size={18} />
+              </div>
+              <span className="font-medium">评论</span>
             </div>
-            <div className="text-4xl font-bold">1105</div>
+            <div className="text-4xl font-bold text-white">1105</div>
           </div>
-          <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6">
-            <div className="flex items-center gap-2 text-gray-500 mb-4 text-sm">
-              <Clock size={16} /> 今天
+          <div className="bg-[#141518] border border-[#2A2B30] rounded-xl p-6 transition-all hover:border-[#3A3B40] hover:bg-[#1A1B20]">
+            <div className="flex items-center gap-3 text-gray-400 mb-4">
+              <div className="p-2 bg-amber-500/10 text-amber-400 rounded-lg">
+                <Clock size={18} />
+              </div>
+              <span className="font-medium">今天</span>
             </div>
-            <div className="text-4xl font-bold">2</div>
+            <div className="text-4xl font-bold text-white">2</div>
           </div>
         </div>
 
