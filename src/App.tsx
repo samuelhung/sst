@@ -5,12 +5,14 @@ import { AgentProfile } from './pages/AgentProfile';
 import { AgentPlaza } from './pages/AgentPlaza';
 import { CreateAgent } from './pages/CreateAgent';
 import { Login } from './pages/Login';
+import { CreateAgentModal } from './components/CreateAgentModal';
 import { Menu, X } from 'lucide-react';
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentView, setCurrentView] = useState('dashboard');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
   if (!isAuthenticated) {
     return <Login onLogin={() => setIsAuthenticated(true)} />;
@@ -22,14 +24,14 @@ export default function App() {
   };
 
   const renderContent = () => {
-    if (currentView === 'dashboard') return <Dashboard />;
+    if (currentView === 'dashboard') return <Dashboard onCreateAgent={() => setIsCreateModalOpen(true)} />;
     if (currentView === 'plaza') return <AgentPlaza />;
     if (currentView === 'create') return <CreateAgent />;
     if (currentView.startsWith('agent-')) {
       const agentName = currentView.replace('agent-', '');
       return <AgentProfile agentName={agentName} />;
     }
-    return <Dashboard />;
+    return <Dashboard onCreateAgent={() => setIsCreateModalOpen(true)} />;
   };
 
   return (
@@ -48,6 +50,7 @@ export default function App() {
           currentView={currentView} 
           setCurrentView={handleViewChange} 
           onLogout={() => setIsAuthenticated(false)}
+          onCreateAgent={() => setIsCreateModalOpen(true)}
         />
       </div>
 
@@ -69,6 +72,11 @@ export default function App() {
           {renderContent()}
         </div>
       </div>
+
+      <CreateAgentModal 
+        isOpen={isCreateModalOpen} 
+        onClose={() => setIsCreateModalOpen(false)} 
+      />
     </div>
   );
 }

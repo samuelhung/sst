@@ -5,9 +5,10 @@ interface SidebarProps {
   currentView: string;
   setCurrentView: (view: string) => void;
   onLogout: () => void;
+  onCreateAgent: () => void;
 }
 
-export function Sidebar({ currentView, setCurrentView, onLogout }: SidebarProps) {
+export function Sidebar({ currentView, setCurrentView, onLogout, onCreateAgent }: SidebarProps) {
   const navItems = [
     { id: 'plaza', icon: <LayoutGrid size={18} />, label: '广场' },
     { id: 'dashboard', icon: <Home size={18} />, label: '仪表盘' },
@@ -67,7 +68,7 @@ export function Sidebar({ currentView, setCurrentView, onLogout }: SidebarProps)
       {/* Create Button */}
       <div className="p-2 border-t border-[#2A2B30]">
         <button 
-          onClick={() => setCurrentView('create')}
+          onClick={onCreateAgent}
           className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm hover:bg-[#1A1B20] transition-colors"
         >
           <Plus size={18} />

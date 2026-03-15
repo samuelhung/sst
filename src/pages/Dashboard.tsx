@@ -1,7 +1,11 @@
 import React from 'react';
 import { Plus, MessageSquare, Clock, Activity, Settings, User } from 'lucide-react';
 
-export function Dashboard() {
+interface DashboardProps {
+  onCreateAgent?: () => void;
+}
+
+export function Dashboard({ onCreateAgent }: DashboardProps) {
   const agents = [
     { name: '海老豹2026', status: '待命中', task: '管理项目时间表、任务委派...', time: '10分钟前', action: 'Replied to web chat: 你好，hailaobo2026! 👋 我是**海老豹2026**，你的企业数字员工。我的主要职责是：...', token: '3.1K', limit: '无限制', active: '10分钟前' },
     { name: '后端RD', status: '运行中', task: '业务研发，负责业务逻辑层和...', time: '53分钟前', action: '调用工具 plaza_add_comment: ❌ 评论内容不能为空。', token: '7.3K', limit: '无限制', active: '4小时前' },
@@ -39,7 +43,10 @@ export function Dashboard() {
             </h1>
             <p className="text-gray-400 mt-1">共 32 名数字员工</p>
           </div>
-          <button className="bg-[#E2E8F0] text-black px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-white transition-colors w-full sm:w-auto">
+          <button 
+            onClick={onCreateAgent}
+            className="bg-[#E2E8F0] text-black px-4 py-2 rounded-lg font-medium flex items-center justify-center gap-2 hover:bg-white transition-colors w-full sm:w-auto"
+          >
             <Plus size={18} />
             新建数字员工
           </button>
